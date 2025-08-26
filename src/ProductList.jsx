@@ -222,7 +222,7 @@ function ProductList({ onHomeClick }) {
         padding: '15px',
         display: 'flex',
         justifyContent: 'space-between',
-        alignIems: 'center',
+        alignItems: 'center',
         fontSize: '20px',
     }
     const styleObjUl = {
@@ -265,8 +265,9 @@ function ProductList({ onHomeClick }) {
     }
   };
   const calculateTotalQuantity = () => {
- return CartItems ? CartItems.reduce((total, item) => total + item.quantity, 0) : 0;
-  };
+  return cart && cart.length > 0 ? cart.reduce((total, item) => total + item.quantity, 0) : 0;
+};
+
 
   return (
     <div>
